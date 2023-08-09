@@ -13,7 +13,7 @@ Imports:
     glue,
     purrr,
     stats
-Description: Letter Values for the course Exploratory Data Analysis (MATD39) at Federal University of Bahia (Brazil). The approach implemented in the package is presented in the textbook of Tukey  (1977) <ISBN: 978-0201076165>.
+Description: Letter Values for the course Exploratory Data Analysis at Federal University of Bahia (Brazil). The approach implemented in the package is presented in the textbook of Tukey  (1977) <ISBN: 978-0201076165>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
