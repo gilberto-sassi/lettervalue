@@ -5,7 +5,7 @@ package is presented in the textbook of Montgomery and Runger (2010)
 
 ## Example
 
-In this example, we’ve used the datase `rivers`, which is available in
+In this example, we’ve used the dataset `rivers`, which is available in
 `R` and it is a `vector`.
 
     library(lettervalue)

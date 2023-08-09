@@ -2,7 +2,7 @@ Package: lettervalue
 Type: Package
 Title: Computing Letter Values
 Version: 0.1.0
-Author: c(
+Authors@R: c(
     person(given = "Gilberto",
            family = "Sassi",
            role = c("aut", "cre"),
