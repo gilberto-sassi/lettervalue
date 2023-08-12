@@ -4,10 +4,10 @@
 \alias{summary.lv}
 \title{Summary Using Letter Value}
 \usage{
-\method{summary}{lv}(x, ...)
+\method{summary}{lv}(object, ...)
 }
 \arguments{
-\item{x}{an object \code{lv}.}
+\item{object}{an object \code{lv}.}
 
 \item{...}{further arguments passed to or from other methods.}
 }

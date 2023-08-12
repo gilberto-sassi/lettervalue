@@ -1,14 +1,14 @@
 #' Summary Using Letter Value
-#' 
+#'
 #' Compute the resume measures (location and scale) using letter values.
-#' 
+#'
 #' In this summary, we present the trimean, median, F-spread, F-pseudo sigma, F-pseudo variance e outliers values.
-#' 
+#'
 #' @details This function returns the measures of location and scale as presented at Understanding Robust and Exploratory Data Analysis by Hoaglin, Mosteller and Tukey published in 1983.
-#' 
+#'
 #' This is a generic method for the class "lv".
-#' 
-#' @param x an object \code{lv}.
+#'
+#' @param object an object \code{lv}.
 #' @param ... further arguments passed to or from other methods.
 #' @examples
 #' lv_obj <- letter_value(rivers)
@@ -16,9 +16,9 @@
 #'
 #' @export summary.lv
 #' @export
-summary.lv <- function(x, ...) {
+summary.lv <- function(object, ...) {
     # letter values data frame
-    df_lv <- x$lv_data_frame
+    df_lv <- object$lv_data_frame
 
     # trimean
     trimean <- 0.25 * df_lv$lv_lower[2] + 0.5 * df_lv$lv_lower[1] + 0.25 * df_lv$lv_upper[2]
@@ -40,13 +40,13 @@ summary.lv <- function(x, ...) {
     upper_bound <- df_lv$lv_upper[2] + f_spread
 
     points <- vector("double")
-    if (min(x$sample) < lower_bound) {
-        points <- c(points, x$sample[x$sample < lower_bound])
+    if (min(object$sample) < lower_bound) {
+        points <- c(points, object$sample[object$sample < lower_bound])
     }
-    if (max(x$sample) > upper_bound) {
-        points <- c(points, x$sample[x$sample > upper_bound])
+    if (max(object$sample) > upper_bound) {
+        points <- c(points, object$sample[object$sample > upper_bound])
     }
-    
+
     if (length(points) > 0) {
         outliers <- points
     } else {
