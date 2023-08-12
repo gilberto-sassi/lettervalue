@@ -58,6 +58,6 @@ letter_value <- function(x, level = 2, na_rm = TRUE) {
     )
   )
 
-  class(output) <- c(class(output), "lv")
+  class(output) <- c("lv")
   return(output)
 }

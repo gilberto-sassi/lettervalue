@@ -46,6 +46,7 @@ summary.lv <- function(x, ...) {
     if (max(x$sample) > upper_bound) {
         points <- c(points, x$sample[x$sample > upper_bound])
     }
+    
     if (length(points) > 0) {
         outliers <- points
     } else {
