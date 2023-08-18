@@ -10,13 +10,23 @@
 #'
 #' @param object an object \code{lv}.
 #' @param ... further arguments passed to or from other methods.
+#' @param coef Length of the whiskers as multiple of IQR. Defaults to 1.
+#' @return A \code{tibble} object with the following columns:
+#' \describe{
+#' \item{trimean}{resistant measure to small changes in the dataset for location.}
+#' \item{median}{resistant measure to small changes in the datase for location.}
+#' \item{f_spread}{resistant measure to small changes in the dataset for scale.}
+#' \item{f_pesudo_sigma}{resistant measure to small changes in the dataset for location. For a normal distribution, this measure is equal to populational statndard deviation.}
+#' \item{f_pseudo_variance}{squared valued of \code{f_pseudo_sigma}.}
+#' \item{outliers}{values outside whiskers.}
+#' }
 #' @examples
 #' lv_obj <- letter_value(rivers)
 #' summary.lv(lv_obj)
 #'
 #' @export summary.lv
 #' @export
-summary.lv <- function(object, ...) {
+summary.lv <- function(object, ..., coef = 1.5) {
     # letter values data frame
     df_lv <- object$lv_data_frame
 
@@ -36,8 +46,8 @@ summary.lv <- function(object, ...) {
     f_pseudo_variance <- f_pseudo_sigma^2
 
     # outliers
-    lower_bound <- df_lv$lv_lower[2] - f_spread
-    upper_bound <- df_lv$lv_upper[2] + f_spread
+    lower_bound <- df_lv$lv_lower[2] - coef * f_spread
+    upper_bound <- df_lv$lv_upper[2] + coef * f_spread
 
     points <- vector("double")
     if (min(object$sample) < lower_bound) {

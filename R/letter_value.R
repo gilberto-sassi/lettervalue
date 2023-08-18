@@ -27,7 +27,7 @@ letter_value <- function(x, level = 2, na_rm = TRUE) {
   len <- length(order_stats) # length of sample
   if (level > 9) stop("Limit level summary is 9.")
 
-  letters <- c("F", "E", "D", "C", "B", "A")
+  letters <- c("F", "E", "D", "C", "B", "A", "Z", "Y", "X", "W", "V", "U", "T", "S", "R")
 
   depth <- (len + 1) / 2
   for (l in 2:level) {

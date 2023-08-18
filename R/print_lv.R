@@ -10,6 +10,7 @@
 #'
 #' @param x an object \code{lv}.
 #' @param ... further arguments passed to or from other methods.
+#' @return No return value, called to improve visualization of letter values as proposed at the seminal book Understanding Robust and Exploratory Data Analysis by Hoaglin, Mosteller and Tukey published of 1983.
 #' @examples
 #' lv_obj <- letter_value(rivers)
 #' print.lv(lv_obj)

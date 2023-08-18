@@ -11,6 +11,9 @@
 
 \item{...}{further arguments passed to or from other methods.}
 }
+\value{
+No return value, called to improve visualization of letter values as proposed at the seminal book Understanding Robust and Exploratory Data Analysis by Hoaglin, Mosteller and Tukey published of 1983.
+}
 \description{
 Display and return letter values.
 }

@@ -4,12 +4,25 @@
 \alias{summary.lv}
 \title{Summary Using Letter Value}
 \usage{
-\method{summary}{lv}(object, ...)
+\method{summary}{lv}(object, ..., coef = 1.5)
 }
 \arguments{
 \item{object}{an object \code{lv}.}
 
 \item{...}{further arguments passed to or from other methods.}
+
+\item{coef}{Length of the whiskers as multiple of IQR. Defaults to 1.}
+}
+\value{
+A \code{tibble} object with the following columns:
+\describe{
+\item{trimean}{resistant measure to small changes in the dataset for location.}
+\item{median}{resistant measure to small changes in the datase for location.}
+\item{f_spread}{resistant measure to small changes in the dataset for scale.}
+\item{f_pesudo_sigma}{resistant measure to small changes in the dataset for location. For a normal distribution, this measure is equal to populational statndard deviation.}
+\item{f_pseudo_variance}{squared valued of \code{f_pseudo_sigma}.}
+\item{outliers}{values outside whiskers.}
+}
 }
 \description{
 Compute the resume measures (location and scale) using letter values.
