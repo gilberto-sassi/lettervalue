@@ -40,7 +40,7 @@ summary.lv <- function(object, ..., coef = 1.5) {
     f_spread <- df_lv$lv_upper[2] - df_lv$lv_lower[2]
 
     # F-Pseudo sigma
-    f_pseudo_sigma <- f_spread / 1.379
+    f_pseudo_sigma <- f_spread / 1.349
 
     # F-Pseudo variance
     f_pseudo_variance <- f_pseudo_sigma^2
